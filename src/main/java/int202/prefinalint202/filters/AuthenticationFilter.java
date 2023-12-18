@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebFilter(filterName = "AuthenticationFilter", servletNames = {"OfficeServlet"})
+@WebFilter(filterName = "AuthenticationFilter", servletNames = {"OfficeServlet", "CustomerServlet"})
 public class AuthenticationFilter implements Filter {
 
     @Override
@@ -18,7 +18,7 @@ public class AuthenticationFilter implements Filter {
         Customer currentUser = (Customer) session.getAttribute("currentUser");
         if (currentUser == null) {
             session.setAttribute("error", "please login first");
-            ((HttpServletResponse) response).sendRedirect("../005/login");
+            ((HttpServletResponse) response).sendRedirect("../020/login");
         } else {
             chain.doFilter(request, response);
         }

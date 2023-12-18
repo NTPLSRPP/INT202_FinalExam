@@ -20,5 +20,7 @@
 </c:if>
 <br>
 <a href="020/office">Office List</a>
+<br>
+<a href="020/customer">Customer List</a>
 </body>
 </html>
